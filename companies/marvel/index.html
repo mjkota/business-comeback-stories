@@ -246,6 +246,43 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .marvel-story {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 32px 24px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+        }
+
+        .marvel-story h2 {
+            color: #ff6b6b;
+            font-size: 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .marvel-story ul {
+            margin: 16px 0 16px 24px;
+            padding-left: 16px;
+        }
+
+        .marvel-story strong {
+            color: #ffd93d;
+            font-weight: 700;
+        }
+
+        .marvel-story p {
+            margin-bottom: 12px;
+        }
     </style>
 </head>
 <body>
@@ -268,6 +305,14 @@
         </header>
         
         <main>
+            <div id="story-section"></div>
+            <script>
+                fetch('marvel-story.html')
+                  .then(response => response.text())
+                  .then(data => {
+                    document.getElementById('story-section').innerHTML = data;
+                  });
+            </script>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="year">December 1996</div>
